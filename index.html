@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Problem: Rock, Paper, Scissors</title>
+    <script>
+        function computerPlay() {
+            let choice = Math.floor((Math.random() * 3) + 1);
+            if (choice == 1) {
+                return "rock";
+            } else if (choice == 2) {
+                return "paper";
+            } else {
+                return "scissors";
+            }
+        }
+
+        function playerPlay() {
+            let choice = prompt("Enter rock, paper or scissors");
+            return choice.toLowerCase();
+        }
+
+        function getWinner(player, computer) {
+            console.log(computer);
+            if (computer == "rock") {
+                if (player == "rock") {
+                    console.log("It's a Draw!");
+                } else if (player == "paper") {
+                    console.log("Congratulations! You Won!");
+                } else if (player == "scissors") {
+                    console.log("Too Bad, you lose!");
+                } else {
+                    console.log("Wrong Input from User!");
+                }
+            } else if (computer == "paper") {
+                if (player == "rock") {
+                    console.log("Too Bad, you lose!");
+                } else if (player == "paper") {
+                    console.log("It's a Draw!");
+                } else if (player == "scissors") {
+                    console.log("Congratulations! You Won!");
+                } else {
+                    console.log("Wrong Input from User!");
+                }
+            } else {
+                if (player == "rock") {
+                    console.log("Congratulations! You Won!");
+                } else if (player == "paper") {
+                    console.log("Too Bad, you lose!");
+                } else if (player == "scissors") {
+                    console.log("It's a Draw!");
+                } else {
+                    console.log("Wrong Input from User!");
+                }
+            }
+        }
+
+        function playRound() {
+            let comp = computerPlay();
+            let play = playerPlay();
+            getWinner(play, comp);
+        }
+
+        function game() {
+            for (i = 0; i < 5; i++) {
+                playRound();
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
